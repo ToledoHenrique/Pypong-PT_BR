@@ -5,6 +5,8 @@ import sys
 jogador1 = input("Nome do jogador1: ")
 jogador2 = input("Nome do jogador2: ")
 email = input("Email de um dos jogadores: ")
+open('historico.txt','a').write(f'Email{email}  |   GJogadores {jogador1} |  {jogador2}\n----------------------------------------------------------------------------------------------------------------\n')
+
 
 
 
@@ -62,6 +64,10 @@ bola_esquerda = bola_posx + largura_da_bola
 # VELOCIDADE DO PLAYER
 velocidade_da_raquete = 12
 pingpong = pygame.mixer.Sound("sounds/Ping.wav") 
+pontução = 0 
+
+
+
 
 def cria_borda(superfice):
     # BORDA DO CAMPO
@@ -132,7 +138,7 @@ def inicia_jogo(superfice):
     
     while run:
         clock.tick(FPS)
-
+    
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 superfice.fill(PRETO)
