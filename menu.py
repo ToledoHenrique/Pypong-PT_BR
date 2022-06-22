@@ -1,5 +1,6 @@
-import pygame, sys
+import pygame, sys , os
 from button import Button
+from pypong import inicia_game
 
 pygame.init()
 
@@ -91,7 +92,7 @@ def main_menu():
                 sys.exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if PLAY_BUTTON.checkForInput(MENU_MOUSE_POS):
-                    play()
+                    inicia_game()
                 if OPTIONS_BUTTON.checkForInput(MENU_MOUSE_POS):
                     options()
                 if QUIT_BUTTON.checkForInput(MENU_MOUSE_POS):

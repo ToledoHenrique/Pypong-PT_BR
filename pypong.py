@@ -4,6 +4,9 @@ import sys
 # INICIALIZAR PYGAME
 jogador1 = input("Nome do jogador1: ")
 jogador2 = input("Nome do jogador2: ")
+email = input("Email de um dos jogadores: ")
+
+
 
 pygame.init()
 
@@ -58,8 +61,7 @@ bola_direita = bola_posx
 bola_esquerda = bola_posx + largura_da_bola
 # VELOCIDADE DO PLAYER
 velocidade_da_raquete = 12
-
-
+pingpong = pygame.mixer.Sound("sounds/Ping.wav") 
 
 def cria_borda(superfice):
     # BORDA DO CAMPO
@@ -72,7 +74,6 @@ def cria_borda(superfice):
 def cria_raquetes(superfice, pos_x, pos_y):
     raquete1 = pygame.draw.rect(superfice, BRANCO, (pos_x, pos_y, raquete_largura, raquete_altura))
     raquete2 = pygame.draw.rect(superfice, BRANCO, (pos_x, pos_y, raquete_largura, raquete_altura))
-
 
 def cria_meio(superfice):
     inicia_posicao_meio = topo[0][1] 
@@ -176,7 +177,7 @@ def inicia_jogo(superfice):
             raquete2_score += 1
             print(f"{jogador2} pontuou \n {jogador2} pontos: {raquete2_score}")
 
-        # TOQUE DA BOLA NO BASA
+        # TOQUE DA BOLA NO BASE
         if bola_posy + altura_da_bola >= base[0][1] - lacuna:
             velocidade_da_bola[1] *= -1       
         # TOQUE DA BOLA NO TOPO
@@ -185,9 +186,12 @@ def inicia_jogo(superfice):
         # TOQUE DA BOLA NA RAQUETE2
         if bola_posy >= raquete2_posy and bola_posy < raquete2_posy + raquete_altura and bola_posx + largura_da_bola >= raquete2_posx:
             velocidade_da_bola[0] *= -1
+            pingpong.play()        
         # TOQUE DA BOLA NA RAQUETE1
         elif bola_posy >= raquete1_posy and bola_posy < raquete1_posy + raquete_altura and bola_posx <= raquete1_posx + raquete_largura:
             velocidade_da_bola[0] *= -1
+            pingpong.play()
+            
 
         cria_janela_jogo(superfice)   
         
