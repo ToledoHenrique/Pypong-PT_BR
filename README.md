@@ -1,4 +1,4 @@
-<h1> --- PROJETO PYGAME | JOGO PYPONG | IMED --- </h1>
+<h1>--/\-- PROJETO PYGAME | JOGO PYPONG | IMED --/\--</h1>
 <h3> ---/\/\----------------------------------------------------------------------------------------/\/\--- </h3>
 <h3> O PROJETO SE BASEA EM UM JOGO DE PING-PONG ONDE OS JOGADORES SE ENFRENTAM PARA VER QUEM FAZ MAIS PONTOS. </h3>
 <h3> & O JOGO É FUNCIONAL PARA DOIS JOGADORES; </h3>
